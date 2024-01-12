@@ -50,7 +50,7 @@
         "*://www.nodeseek.com/notification*"
       ],
       "js": [
-        "/src/pages/content/nodeseek/notication.ts"
+        "/src/pages/content/nodeseek/notication.tsx"
       ]
     }
   ],

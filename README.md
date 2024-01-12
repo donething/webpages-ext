@@ -63,7 +63,8 @@ I couldn't find another minimal boilerplate for React, TypeScript and Tailwind C
 
 1. 升级依赖版本
 2. `Content Script`注入网页的脚本和样式使用`shadow`，避免影响原网页。参考：[content_script index.tsx not applying Tailwind CSS · Issue #19 · JohnBra/vite-web-extension](https://github.com/JohnBra/vite-web-extension/issues/19)
-
+3. 扩展(含`Content Script`)先可直接使用`shadcn-ui`
+4. 通过`Content Script`向页面注入元素时，不设置元素的`id`，不必要，也以免和其它扩展、元素冲突
 ## Usage <a name="usage"></a>
 
 ### Setup <a name="setup"></a>

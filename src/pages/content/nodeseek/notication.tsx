@@ -3,6 +3,11 @@
  */
 import {HelloInfo} from "./types"
 import {NS_KEY_HELLO} from "@pages/content/nodeseek/constants"
+import {createRoot} from 'react-dom/client'
+import styles from "./style.css?inline"
+import {Toaster} from "@/components/ui/toaster"
+import React from "react"
+import {toast} from "@/components/ui/use-toast"
 
 const TAG = "[NSNotication]"
 
@@ -33,6 +38,7 @@ const sendHello = async (helloInfo: HelloInfo) => {
 
 // 当存在来源帖时，先说来源帖的链接
 const sayHello = async () => {
+  toast({description: "弹出消息！"})
   // 从存储中读取需要发送消息的信息
   const helloInfoStr = localStorage.getItem(NS_KEY_HELLO)
   if (!helloInfoStr) {
@@ -58,9 +64,32 @@ const sayHello = async () => {
   }
 }
 
+const injectStatic = () => {
+  const app = document.createElement("div")
+  document.body.appendChild(app)
+
+  // Create a Shadow DOM for the rootContainer
+  const shadowRootContainer = app.attachShadow({mode: "open"})
+
+  // create the style element to attach the styles from tailwind
+  const styleElement = document.createElement("style")
+  styleElement.innerHTML = styles
+
+  // append it to the shadow dom
+  shadowRootContainer.appendChild(styleElement)
+
+  const root = createRoot(shadowRootContainer)
+  root.render(
+    <div>
+      <Toaster/>
+    </div>
+  )
+}
+
 // 执行
 const start = () => {
   if (window.location.hash.startsWith("#/message")) {
+    injectStatic()
     sayHello()
   }
 }
