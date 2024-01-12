@@ -59,12 +59,20 @@ I couldn't find another minimal boilerplate for React, TypeScript and Tailwind C
 - [Chrome Extension Manifest Version 3](https://developer.chrome.com/docs/extensions/mv3/intro/)
 - [Github Action](https://github.com/JohnBra/vite-web-extension/actions/workflows/ci.yml) to build and zip your extension (manual trigger)
 
-## 改变的内容
+## 更新模板
 
+### 已改变的内容
 1. 升级依赖版本
 2. `Content Script`注入网页的脚本和样式使用`shadow`，避免影响原网页。参考：[content_script index.tsx not applying Tailwind CSS · Issue #19 · JohnBra/vite-web-extension](https://github.com/JohnBra/vite-web-extension/issues/19)
 3. 扩展(含`Content Script`)先可直接使用`shadcn-ui`
 4. 通过`Content Script`向页面注入元素时，不设置元素的`id`，不必要，也以免和其它扩展、元素冲突
+
+### 拉取模板的更新
+
+已设置过`upstream`仓库为`https://github.com/donething/vite-web-extension/`
+
+执行 `git remote add upstream` 即可拉取更新的模板
+
 ## Usage <a name="usage"></a>
 
 ### Setup <a name="setup"></a>

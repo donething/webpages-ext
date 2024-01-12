@@ -1,62 +1,13 @@
-import {createRoot} from 'react-dom/client'
-import styles from "./style.css?inline"
-import {Button} from "@/components/ui/button"
-import {useToast} from "@/components/ui/use-toast"
-import React from "react"
-import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert"
-import {ToastAction} from "@/components/ui/toast"
-import {Toaster} from "@/components/ui/toaster"
+// import React from "react"
+// import {Toaster} from "@/components/ui/toaster"
+// import injectComps from "@/mylib/inject_comps"
+// import {toast} from "@/components/ui/use-toast"
+// import styles from "./style.css?inline"
 
-const app = document.createElement("div")
-// 只展示用法，不在网页中显示
-// document.body.appendChild(app)
-
-// Create a Shadow DOM for the rootContainer
-const shadowRootContainer = app.attachShadow({mode: "open"})
-
-// create the style element to attach the styles from tailwind
-const styleElement = document.createElement("style")
-styleElement.innerHTML = styles
-
-// append it to the shadow dom
-shadowRootContainer.appendChild(styleElement)
-
-const root = createRoot(shadowRootContainer)
-
-const Comp = React.memo(() => {
-  const {toast} = useToast()
-
-  const handleClick = () => {
-    console.log("点击了按钮")
-    toast({
-      title: "Scheduled: Catch up ",
-      description: "Friday, February 10, 2023 at 5:57 PM",
-      action: (
-        <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
-      ),
-    })
-  }
-
-  return (
-    <div className="absolute bottom-0 left-0 text-lg text-black bg-amber-400 z-50">
-      <Toaster/>
-
-      <Button variant="outline" onClick={handleClick}>Show Toast</Button>
-
-      <Alert>
-        <AlertTitle>Heads up!</AlertTitle>
-        <AlertDescription>
-          You can add components to your app using the cli.
-        </AlertDescription>
-      </Alert>
-
-      <span>content script loaded</span>
-    </div>
-  )
-})
-Comp.displayName = "Comp"
-
-root.render(<Comp/>)
+// 注入 shadcn-ui 的 toast
+// injectComps(<div><Toaster/></div>, styles)
+// 使用 shadcn-ui 的 toast 提示
+// toast({description: "content script loaded"})
 
 try {
   console.log("content script loaded")
