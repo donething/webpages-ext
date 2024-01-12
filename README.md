@@ -59,6 +59,11 @@ I couldn't find another minimal boilerplate for React, TypeScript and Tailwind C
 - [Chrome Extension Manifest Version 3](https://developer.chrome.com/docs/extensions/mv3/intro/)
 - [Github Action](https://github.com/JohnBra/vite-web-extension/actions/workflows/ci.yml) to build and zip your extension (manual trigger)
 
+## 改变的内容
+
+1. 升级依赖版本
+2. `Content Script`注入网页的脚本和样式使用`shadow`，避免影响原网页。参考：[content_script index.tsx not applying Tailwind CSS · Issue #19 · JohnBra/vite-web-extension](https://github.com/JohnBra/vite-web-extension/issues/19)
+
 ## Usage <a name="usage"></a>
 
 ### Setup <a name="setup"></a>
