@@ -42,7 +42,7 @@ const extOpMenu = () => {
   }
 
   // 创建元素，点击后打开发送私信的页面
-  const iconURL = chrome.runtime.getURL("/icons/message.svg")
+  // const iconURL = chrome.runtime.getURL("/icons/message.svg")
   const createMessageElem = (authorID: string, floor: string, tag: string) => {
     const div = document.createElement("div")
     div.dataset.authorId = authorID
@@ -51,16 +51,16 @@ const extOpMenu = () => {
     div.className = "menu-item"
     div.onclick = sendMessage
 
-    const img = document.createElement("img")
-    img.dataset[tag] = ""
-    img.className = "iconpark-icon"
-    img.src = iconURL
+    // const img = document.createElement("img")
+    // img.dataset[tag] = ""
+    // img.className = "iconpark-icon"
+    // img.src = iconURL
 
     const span = document.createElement("span")
     span.dataset[tag] = ""
-    span.textContent = "私信"
+    span.textContent = "💌 私信"
 
-    div.append(img, span)
+    div.append(span)
     return div
   }
 
