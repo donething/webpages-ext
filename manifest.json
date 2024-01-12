@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "<name in manifest.json>",
-  "description": "<description in manifest.json>",
+  "name": "WebpagesExt(WPE)",
+  "description": "扩展长逛网站的功能",
   "options_ui": {
     "page": "src/pages/options/index.html"
   },
@@ -15,14 +15,13 @@
       "32": "icon-32.png"
     }
   },
-  "chrome_url_overrides": {
-    "newtab": "src/pages/newtab/index.html"
-  },
   "icons": {
     "128": "icon-128.png"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs",
+    "storage"
   ],
   "content_scripts": [
     {
@@ -37,17 +36,36 @@
       "css": [
         "contentStyle.css"
       ]
+    },
+    {
+      "matches": [
+        "*://www.nodeseek.com/post-*"
+      ],
+      "js": [
+        "/src/pages/content/nodeseek/post.ts"
+      ]
+    },
+    {
+      "matches": [
+        "*://www.nodeseek.com/notification*"
+      ],
+      "js": [
+        "/src/pages/content/nodeseek/notication.ts"
+      ]
     }
   ],
-  "devtools_page": "src/pages/devtools/index.html",
   "web_accessible_resources": [
     {
       "resources": [
         "contentStyle.css",
         "icon-128.png",
-        "icon-32.png"
+        "icon-32.png",
+        "/icons/*.svg"
       ],
-      "matches": []
+      "matches": [
+        "<all_urls>"
+      ],
+      "use_dynamic_url": false
     }
   ]
 }
