@@ -26,20 +26,15 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*",
-        "<all_urls>"
+        "https://www.nodeseek.com/*"
       ],
       "js": [
-        "src/pages/content/index.tsx"
-      ],
-      "css": [
-        "contentStyle.css"
+        "/src/pages/content/nodeseek/global.ts"
       ]
     },
     {
       "matches": [
-        "*://www.nodeseek.com/post-*"
+        "https://www.nodeseek.com/post-*"
       ],
       "js": [
         "/src/pages/content/nodeseek/post.ts"
@@ -47,10 +42,18 @@
     },
     {
       "matches": [
-        "*://www.nodeseek.com/notification*"
+        "https://www.nodeseek.com/notification*"
       ],
       "js": [
         "/src/pages/content/nodeseek/notication.tsx"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.nodeseek.com/*"
+      ],
+      "js": [
+        "/src/pages/content/nodeseek/list.tsx"
       ]
     }
   ],

@@ -13,8 +13,12 @@
   },
   "type": "module",
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.0.7",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "do-utils": "^1.0.88",
@@ -48,6 +52,6 @@
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
-    "vite": "^5.0.11"
+    "vite": "5.1.0-beta.0"
   }
 }

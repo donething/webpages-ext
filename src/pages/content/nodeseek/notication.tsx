@@ -60,10 +60,10 @@ const sayHello = async () => {
       sendBn.textContent = orign
 
       sendHello(helloInfo).then(() => {
-        console.log("已发送 hello 消息", helloInfo)
+        console.log(TAG, "已发送 hello 消息", helloInfo)
         toast({title: "已发送 hello 消息"})
       }).catch(e => {
-        console.log("发送 hello 消息出错", e)
+        console.log(TAG, "发送 hello 消息出错", e)
         toast({title: "发送 hello 消息失败", description: typeError(e).message, variant: "destructive"})
       })
     }, true)

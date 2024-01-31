@@ -61,6 +61,7 @@ export default defineConfig({
   ],
   publicDir,
   build: {
+    minify: false,  // 最小化混淆
     outDir,
     sourcemap: isDev,
     emptyOutDir: !isDev
