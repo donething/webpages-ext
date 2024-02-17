@@ -20,8 +20,8 @@
   },
   "permissions": [
     "activeTab",
-    "tabs",
-    "storage"
+    "storage",
+    "scripting"
   ],
   "content_scripts": [
     {
@@ -63,7 +63,8 @@
         "contentStyle.css",
         "icon-128.png",
         "icon-32.png",
-        "/icons/*.svg"
+        "/icons/*.svg",
+        "/js/*.js"
       ],
       "matches": [
         "<all_urls>"
